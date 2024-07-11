@@ -19,5 +19,3 @@ function onRoot(node, children) {
 
 
 export const doFrontmatter = factory({onLeaf, onBranch, onRoot})
-
-// hi
