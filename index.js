@@ -7,12 +7,14 @@ import {doFrontmatter} from "/home/kdog3682/2024-javascript/ttt/doFrontmatter.js
 const foobarText = `
 %%%%%%%%%%%%%%%%%% function: doFrontMatter
 %%%%%%%%%%%%%%%%%% desc: only single lines
+%%%%%%%%%%%%%%%%%% status: working
 aa: 1
 bb:
     abc: 2
 cc: 33
 
 %%%%%%%%%%%%%%%%%% function: doFrontMatter
+%%%%%%%%%%%%%%%%%% status: not working 
 %%%%%%%%%%%%%%%%%% desc: contains multiline strings (x)
 aa: 1
 bb:
@@ -52,7 +54,7 @@ next item
 
 function get(s) {
     const r = /\(x\) *\n/
-    return s.split(r)[1]
+    return s.split(r)[1].split(/%{6,}/)[0]
 }
 
 // console.loggg(doFoobar(foobarText))
