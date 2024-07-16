@@ -26,7 +26,11 @@ export function factory(
                     return onBranch(c, children)
                 }
             } else {
-                return onLeaf(c)
+                if (start == c) {
+                    return onRoot(null, [onLeaf(c)])
+                } else {
+                    return onLeaf(c)
+                }
             }
         }
     }
